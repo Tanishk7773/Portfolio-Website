@@ -1,4 +1,40 @@
-gsap.registerPlugin(ScrollTrigger)
+
+// GSAP animation for intro
+// Intro animation
+gsap.fromTo(
+    ".intro h1",
+    { scale: 0.5, opacity: 0 },
+    { 
+        scale: 1.5, 
+        opacity: 1, 
+        duration: 1.5, 
+        ease: "power2.out", 
+        onComplete: moveUp 
+    }
+);
+
+function moveUp() {
+    gsap.to(".intro h1", {
+        y: -200,
+        filter: "blur(10px)",
+        opacity: 0,
+        duration: 1,
+        ease: "power2.in",
+        onComplete: () => {
+            document.querySelector(".intro").classList.add("hidden"); // Hide intro
+            startPhotoAnimation(); // Start photo animation
+        }
+    });
+}
+
+function startPhotoAnimation() {
+    gsap.to(".right-side", {
+        opacity: 1, // Fade in
+        x: -50, // Slide from right (adjust value as needed)
+        duration: 1,
+        ease: "power2.out"
+    });
+}gsap.registerPlugin(ScrollTrigger)
 
 gsap.from('.logo div',{
     opacity:0,

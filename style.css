@@ -9,6 +9,33 @@
     font-family: bm;
     src: url(./font/BlackMango-Black.otf);
 }
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Black background for intro */
+    z-index: 1000; /* On top of everything */
+}
+
+.intro h1 {
+    font-size: 5rem; /* Bada-bada text */
+    color: #fff; /* White text */
+    margin: 0;
+    opacity: 0; /* Start invisible for fade-in */
+}
+.right-side {
+    opacity: 0; /* Start invisible for animation */
+}
+
+/* Hide intro after animation */
+.intro.hidden {
+    display: none;
+}
 
 h1{
     font-family: bm;
@@ -28,12 +55,57 @@ body{
     /* font-size: 18px; */
 }
 
+
 .logo{
     display: flex;
     align-items: center;
     font-size: 14px;
     font-weight: 600;
     color: #fff;
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px 0;
+    
+}
+
+.stat-item {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px; /* Fixed width for consistency */
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.stat-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #fff; /* White text for contrast */
+}
+
+.stat-item p {
+    font-size: 1rem;
+    margin: 8px 0 0;
+    color: #fff; /* White text */
+}
+
+/* Unique background colors for each stat */
+.stat-item:nth-child(1) {
+    background: #1003bf28; /* Red for Projects */
+}
+
+.stat-item:nth-child(2) {
+    background: #3498db52; /* Blue for Years */
+}
+
+.stat-item:nth-child(3) {
+    background: #2ecc7039; /* Green for Technologies */
 }
 
 .logo .star{
@@ -46,6 +118,7 @@ body{
     display: flex;
     gap: 2rem;
 }
+
 
 li{
     list-style: none;
@@ -80,11 +153,31 @@ section{
     margin: auto;
     align-items: center;
     max-width: 1300px;
+    
 }
+.gold.image {
+    filter:   drop-shadow(0 0 20px rgba(136, 135, 215, 0.8)); /* Blue Glow */  ;
+  }
+  .resume-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db; /* Blue background (customize as needed) */
+    color: white;
+    text-decoration: none; /* Removes underline */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+  
 
 .gold{
     height: 600px;
     width: 600px;
+    
     object-fit: cover;
 }
 .title{
@@ -160,6 +253,7 @@ button:hover{
 .gold3{
     width: 450px;
     height: 450px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -301,6 +395,7 @@ footer{
 .image{
 
     animation: float 4s ease-in-out infinite;
+    
 }
 
 
