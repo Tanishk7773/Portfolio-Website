@@ -1,6 +1,7 @@
 
 // GSAP animation for intro
 // Intro animation
+
 gsap.fromTo(
     ".intro h1",
     { scale: 0.5, opacity: 0 },

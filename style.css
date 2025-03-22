@@ -231,7 +231,7 @@ section{
     width: 40px;
 }
 
-p{
+.p{
     font-size: 14px;
     font-weight: 600;
     max-width: 400px;
@@ -434,6 +434,7 @@ footer{
     animation: float 4s ease-in-out infinite;
     
 }
+
 
 
 @keyframes float {
